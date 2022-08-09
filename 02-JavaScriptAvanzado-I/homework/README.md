@@ -13,7 +13,7 @@ var a = 5;
 var b = 10;
 var c = function(a, b, c) {
   var x = 10;
-  console.log(x);
+  console.log(x);// 10
   console.log(a);
   var f = function(a, b, c) {
     b = a;
@@ -75,22 +75,22 @@ console.log(pm);
 ¿Cuál crees que será el resultado de la ejecución de estas operaciones?:
 
 ```javascript
-6 / "3"
-"2" * "3"
-4 + 5 + "px"
-"$" + 4 + 5
-"4" - 2
-"4px" - 2
-7 / 0
-{}[0]
-parseInt("09")
-5 && 2
-2 && 5
-5 || 0
-0 || 5
-[3]+[3]-[10]
-3>2>1
-[] == ![]
+6 / "3" = 2
+"2" * "3" = 6
+4 + 5 + "px" = "9px"
+"$" + 4 + 5 = "$9"
+"4" - 2 = Nan
+"4px" - 2 = Nan
+7 / 0 = 0
+{}[0] = error
+parseInt("09") = 9
+5 && 2 = 2
+2 && 5 = 5
+5 || 0 = 5
+0 || 5 = 5
+[3]+[3]-[10] = 23
+3>2>1 = true
+[] == ![] = []
 ```
 
 > Si te quedó alguna duda repasá con [este artículo](http://javascript.info/tutorial/object-conversion).
