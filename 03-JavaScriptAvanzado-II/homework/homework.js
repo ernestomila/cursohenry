@@ -28,6 +28,10 @@ const counterTop = counter();
 console.log(counterTop());
 console.log(counterTop());
 console.log(counterTop());
+console.log(counterTop());
+console.log(counterTop());
+console.log(counterTop());
+
 console.log("+++++++++++++++++++++1");
 
 function multiplica(num2){
@@ -71,23 +75,22 @@ function cacheFunction(callback) {
   let cache = {};
   return function (num2){
     if(!cache.hasOwnProperty(num2)){
-      cache[num2] = callback(num2);
+      cache[num2] = callback(num2); //{ 5: 10, 2: 4, 3: 6 }
     }
     return cache[num2];
   }
 }
 
 const cachedFunction = cacheFunction(multiplica);
-console.log(cachedFunction(true));
-console.log(cachedFunction(true));
-console.log(cachedFunction(true));
 console.log(cachedFunction(2));
 console.log(cachedFunction(3));
 console.log(cachedFunction(2));
 console.log(cachedFunction(5));
+console.log(cachedFunction(5));
+console.log(cachedFunction(6));
 
 console.log("+++++++++++++++++++++2");
-// // Bind
+// Bind
 
 var instructor = {
   nombre: "Franco",
@@ -120,6 +123,7 @@ getNombreAlumno();
 
 console.log("+++++++++++++++++++++3");
 /*
+
   Ejercicio 4
   
   Sin modificar la función crearCadena, usar bind para guardar, en las 
@@ -127,7 +131,8 @@ console.log("+++++++++++++++++++++3");
   una cadena (string) y el delimitador especificado (asteriscos, guiones, 
   y guiones bajos, respectivamente). Las funciones obtenidas deberían 
   recibir solamente un argumento - la cadena de texto - ya que los 
-  otros argumentos habrán sido "bindeados". 
+  otros argumentos habrán sido "bindeados".
+
 */
 
 function crearCadena(delimitadorIzquierda, delimitadorDerecha, cadena) {
@@ -137,7 +142,7 @@ function crearCadena(delimitadorIzquierda, delimitadorDerecha, cadena) {
 let textoAsteriscos = crearCadena.bind(this,"*","*");
 let textoGuiones = crearCadena.bind(this,"-","-");
 let textoUnderscore = crearCadena.bind(this,"_","_");
-console.log(textoAsteriscos("Sorpresa"));
+console.log(textoAsteriscos("Sies"));
 console.log(textoGuiones("Hola"));
 console.log(textoUnderscore("Maria"));
 
