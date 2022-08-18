@@ -70,30 +70,62 @@ Definir los siguientes métodos:
 Pueden utilizar class o función constructora.
 */
 
-class Queue {
-  constructor (list=[]){
-    this.list = list;
-  }
+// class Queue {
+//   constructor (list=[]){
+//     this.list = list;
+//   }
 
-  getList(){
-    return this.list;
-  }
+//   getList(){
+//     return this.list;
+//   }
 
-  enqueue(valor){
-    this.list.push(valor);
-  }
+//   enqueue(valor){
+//     this.list.push(valor);
+//   }
 
-  dequeue(){
-    if(this.list.length == 0){
-      return undefined;
-    }
-    return this.list.shift();
-  }
+//   dequeue(){
+//     if(this.list.length == 0){
+//       return undefined;
+//     }
+//     return this.list.shift();
+//   }
 
-  size(){
-    return this.list.length;
-  }  
+//   size(){
+//     return this.list.length;
+//   }  
+// }
+
+function Queue(){
+  this.data = [];
+  //this.count = 0;
 }
+
+Queue.prototype.enqueue = function(value){
+  console.log(this.data);
+  //this.data = [...this.data, value];
+  //this.count++;
+  this.data.push(value);  
+};
+Queue.prototype.deenqueue = function(){ 
+  //if(this.count > 0){
+    // this.count--;
+    // const [result, ...rest] = this.data; //rest operators [a, ...others]
+    // this.data = rest;
+    // return result;
+  //}
+  //else{ return undefined;}
+  return this.data.shift();
+};
+Queue.prototype.size = function(){
+  //return this.count; 
+  console.log(this.data.length);
+  return this.data.length;
+};
+
+console.log(Queue.prototype.enqueue(3));
+console.log(Queue.prototype.deenqueue());
+console.log(Queue.prototype.size());
+
 
 let queue = new Queue();
 console.log(queue.size());

@@ -150,6 +150,8 @@ console.log("+++++++++++++++++++++4");
 // No modifiquen nada debajo de esta linea
 // --------------------------------
 
+console.log(010-03);
+
 module.exports = {
   counter,
   cacheFunction,
