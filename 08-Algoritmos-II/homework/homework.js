@@ -42,6 +42,7 @@ function mergeSort(array){
  
   return extra(mergeSort(aux1), mergeSort(array));
 }
+
 function extra(aux1, aux2) { 
   // Implementar el método conocido como mergeSort para ordenar de menor a mayor
   // el array recibido como parámetro
