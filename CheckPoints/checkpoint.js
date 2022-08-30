@@ -25,33 +25,45 @@ var countArray = function (array) {
   return suma;
 };
 
-console.log(countArray([1,[1,2],3,4,[3,2,5,5],[3,3]]));
+//console.log(countArray([1,[1,2],3,4,[3,2,5,5],[3,3]]));
 
 // Implementar la función countProps: a partir de un objeto en el cual cada propiedad puede contener
 // cualquier tipo de dato, determinar la cantidad de propiedades de objetos en cualquier nivel, ya sea el inicial
 // u objetos anidados
 // Ejemplo:
-// var obj = {
-//   a: {
-//     a1: 10,
-//     a2: 'Franco',
-//     a3: {f: 'r', a: 'n', c: {o: true}}
-//   },
-//   b: 2,
-//   c: [1, {a: 1}, 'Franco']
-// }
+
 // countProps(obj)--> Deberia devolver 10 ya que el objeto inicial tiene 3 propiedades, pero a su vez
 // dentro de a tenemos 3 propiedades mas, luego a3 tiene otras 3 y por ultimo c tiene una extra.
 // Propiedades: a, a1, a2, a3, f, a, c, o, b, c --> 10 en total
 
 var countProps = function (obj) {
   // Tu código aca:
-  // let count = 0;
-  // if(obj)
-  // for (let prop in obj){
-  //   if()
-  // }
+  console.log(obj);
+  let count = 0;
+  if(typeof obj !== 'object'){
+    console.log('No es objeto');
+    return count ++;
+  }
+  for (let prop in obj){
+    //console.log(count);
+    console.log(prop);
+    console.log(obj[prop]);
+    count ++;
+    if(typeof obj[prop] === 'object'){
+      console.log('Es objeto');
+      count += countProps(obj[prop]);
+    } else if(prop !== 0 ){
+      count ++;
+    }
+  }
+  return count;
 };
+var obj1 = {
+  a: 3,
+  b: 2,
+  c: [2, {a: 2}, 'Franco']
+}
+console.log('total: ',countProps(obj1));
 
 // Implementar el método changeNotNumbers dentro del prototype de LinkedList que deberá cambiar
 // aquellos valores que no puedan castearse a numeros por 'Kiricocho' y devolver la cantidad de cambios que hizo
