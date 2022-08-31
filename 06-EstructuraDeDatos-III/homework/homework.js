@@ -170,6 +170,34 @@ BinarySearchTree.prototype.breadthFirstForEach = function (cb, queue = []){
     queue.shift().breadthFirstForEach(cb, queue);
   }
 };
+
+BinarySearchTree.prototype.searcTwoBig = function (value = this.value){
+  if(!this.value) return false;
+  let mayor = this.value;
+  let menor = value;
+  let array = [];
+  if(!this.right && !this.left){
+    array.push(mayor);
+    array.push(menor);
+    return array;
+  }
+  if(!this.right && this.left){
+    mayor = this.value;
+    menor = this.left.value;
+    array.push(mayor);
+    array.push(menor);    
+    return array;
+  }
+  if(this.right){
+    return this.right.searcTwoBig(this.value);
+  }
+}
+
+tree.allInsert([ 0, 1, 5, 11, 12, 13, 14, 15, 17, 20, 21, 25, 28, 30, 31, 33, 34, 35, 45, 50 ]);
+console.log(tree);
+console.log(tree.searcTwoBig());
+
+
 // No modifiquen nada debajo de esta linea
 // --------------------------------
 
