@@ -171,7 +171,7 @@ BinarySearchTree.prototype.breadthFirstForEach = function (cb, queue = []){
   }
 };
 
-BinarySearchTree.prototype.searcTwoBig = function (value = this.value){
+BinarySearchTree.prototype.searchTwoBig = function (value = this.value){
   if(!this.value) return false;
   let mayor = this.value;
   let menor = value;
@@ -189,7 +189,7 @@ BinarySearchTree.prototype.searcTwoBig = function (value = this.value){
     return array;
   }
   if(this.right){
-    return this.right.searcTwoBig(this.value);
+    return this.right.searchTwoBig(this.value);
   }
 }
 
